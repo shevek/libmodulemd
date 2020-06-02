@@ -1,0 +1,178 @@
+Description: Correct some typographical errors.
+Forwarded: no
+Author: Peter Pentchev <roam@ringlet.net>
+Last-Update: 2020-06-02
+
+--- a/modulemd/include/modulemd-2.0/modulemd-module-index.h
++++ b/modulemd/include/modulemd-2.0/modulemd-module-index.h
+@@ -152,7 +152,7 @@
+  * fails in a way that prevents program continuation.
+  *
+  * Returns: TRUE if the update was successful. Returns FALSE and sets @failures
+- * approriately if any of the YAML subdocuments were invalid or sets @error if
++ * appropriately if any of the YAML subdocuments were invalid or sets @error if
+  * there was a fatal parse error.
+  *
+  * Since: 2.0
+@@ -179,7 +179,7 @@
+  * fails in a way that prevents program continuation.
+  *
+  * Returns: TRUE if the update was successful. Returns FALSE and sets @failures
+- * approriately if any of the YAML subdocuments were invalid or sets @error if
++ * appropriately if any of the YAML subdocuments were invalid or sets @error if
+  * there was a fatal parse error.
+  *
+  * Since: 2.0
+@@ -206,7 +206,7 @@
+  * fails in a way that prevents program continuation.
+  *
+  * Returns: TRUE if the update was successful. Returns FALSE and sets @failures
+- * approriately if any of the YAML subdocuments were invalid or sets @error if
++ * appropriately if any of the YAML subdocuments were invalid or sets @error if
+  * there was a fatal parse error.
+  *
+  * Since: 2.0
+@@ -233,7 +233,7 @@
+  * fails in a way that prevents program continuation.
+  *
+  * Returns: TRUE if the update was successful. Returns FALSE and sets @failures
+- * approriately if any of the YAML subdocuments were invalid or sets @error if
++ * appropriately if any of the YAML subdocuments were invalid or sets @error if
+  * there was a fatal parse error.
+  *
+  * Since: 2.3
+@@ -499,7 +499,7 @@
+  *
+  * Returns: TRUE if the #ModulemdDefaults was added successfully. If the defaults
+  * already existed in the index, it will be replaced by the new one. On failure,
+- * returns FALSE and sets @error approriately.
++ * returns FALSE and sets @error appropriately.
+  *
+  * Since: 2.0
+  */
+--- a/modulemd/include/private/modulemd-module-index-private.h
++++ b/modulemd/include/private/modulemd-module-index-private.h
+@@ -48,7 +48,7 @@
+  * fails in a way that prevents program continuation.
+  *
+  * Returns: TRUE if the update was successful. Returns FALSE and sets failures
+- * approriately if any of the YAML subdocuments were invalid or sets @error if
++ * appropriately if any of the YAML subdocuments were invalid or sets @error if
+  * there was a fatal parse error.
+  *
+  * Since: 2.0
+--- a/modulemd/include/private/modulemd-module-private.h
++++ b/modulemd/include/private/modulemd-module-private.h
+@@ -53,7 +53,7 @@
+  * defaults version added so far in the #ModulemdModuleIndex. If non-zero,
+  * perform an upgrade to this version while adding @defaults to @self. If
+  * the @defaults already has a higher version, just copy it.
+- * @error: (out): A #GError containing information about why this fucntion
++ * @error: (out): A #GError containing information about why this function
+  * failed.
+  *
+  * This function takes a defaults object, upgrades it to @index_mdversion if it
+@@ -113,7 +113,7 @@
+  * stream version added so far in the #ModulemdModuleIndex. If non-zero,
+  * perform an upgrade to this version while adding @stream to @self. If
+  * the @stream already has the same or a higher version, just copy it.
+- * @error: (out): A #GError containing information about why this fucntion
++ * @error: (out): A #GError containing information about why this function
+  * failed.
+  *
+  * This function takes a stream object, upgrades it to index_mdversion if
+--- a/modulemd/modulemd-component.c
++++ b/modulemd/modulemd-component.c
+@@ -648,7 +648,7 @@
+         }
+     }
+ 
+-  /* The rest of the fields are emitted by childs, after which they need to call
++  /* The rest of the fields are emitted by children, after which they need to call
+ emit_yaml_end to end the mapping. */
+   return TRUE;
+ }
+--- a/modulemd/tests/ModulemdTests/dependencies.py
++++ b/modulemd/tests/ModulemdTests/dependencies.py
+@@ -40,7 +40,7 @@
+         with self.expect_signal(only_on_fatal_warnings=True):
+             d.get_runtime_streams("foobar123")
+ 
+-        # Test that keywork name is accepted
++        # Test that keyword name is accepted
+         d = Modulemd.Dependencies()
+         assert d
+         assert d.get_buildtime_modules() == []
+--- a/modulemd/tests/ModulemdTests/profile.py
++++ b/modulemd/tests/ModulemdTests/profile.py
+@@ -38,7 +38,7 @@
+         assert p.get_description() is None
+         assert p.get_rpms() == []
+ 
+-        # Test that keywork name is accepted
++        # Test that keyword name is accepted
+         p = Modulemd.Profile(name="testprofile")
+         assert p
+         assert p.props.name == "testprofile"
+--- a/modulemd/tests/test-modulemd-module.c
++++ b/modulemd/tests/test-modulemd-module.c
+@@ -58,7 +58,7 @@
+   g_clear_error (&error);
+   g_clear_object (&m);
+ 
+-  /* Test that object instantiation works wiht a name */
++  /* Test that object instantiation works with a name */
+   m = g_object_new (MODULEMD_TYPE_MODULE, "module-name", "testmodule", NULL);
+   g_assert_true (MODULEMD_IS_MODULE (m));
+   g_assert_cmpstr (modulemd_module_get_module_name (m), ==, "testmodule");
+--- a/modulemd/tests/test_data/f29-updates.yaml
++++ b/modulemd/tests/test_data/f29-updates.yaml
+@@ -9963,7 +9963,7 @@
+         buildorder: 2
+         arches: [aarch64, ppc64le, s390x, x86_64]
+       python-pymongo:
+-        rationale: Python MongoDB driver | MongoDB dependecy for running testsuite.
++        rationale: Python MongoDB driver | MongoDB dependency for running testsuite.
+         repository: git://pkgs.fedoraproject.org/rpms/python-pymongo
+         cache: http://pkgs.fedoraproject.org/repo/pkgs/python-pymongo
+         ref: f28
+@@ -10066,7 +10066,7 @@
+         buildorder: 2
+         arches: [aarch64, ppc64le, s390x, x86_64]
+       python-pymongo:
+-        rationale: Python MongoDB driver | MongoDB dependecy for running testsuite.
++        rationale: Python MongoDB driver | MongoDB dependency for running testsuite.
+         repository: git://pkgs.fedoraproject.org/rpms/python-pymongo
+         cache: http://pkgs.fedoraproject.org/repo/pkgs/python-pymongo
+         ref: f28
+--- a/modulemd/tests/test_data/f29.yaml
++++ b/modulemd/tests/test_data/f29.yaml
+@@ -7498,7 +7498,7 @@
+         buildorder: 2
+         arches: [aarch64, ppc64le, s390x, x86_64]
+       python-pymongo:
+-        rationale: Python MongoDB driver | MongoDB dependecy for running testsuite.
++        rationale: Python MongoDB driver | MongoDB dependency for running testsuite.
+         repository: git://pkgs.fedoraproject.org/rpms/python-pymongo
+         cache: http://pkgs.fedoraproject.org/repo/pkgs/python-pymongo
+         ref: f28
+@@ -7601,7 +7601,7 @@
+         buildorder: 2
+         arches: [aarch64, ppc64le, s390x, x86_64]
+       python-pymongo:
+-        rationale: Python MongoDB driver | MongoDB dependecy for running testsuite.
++        rationale: Python MongoDB driver | MongoDB dependency for running testsuite.
+         repository: git://pkgs.fedoraproject.org/rpms/python-pymongo
+         cache: http://pkgs.fedoraproject.org/repo/pkgs/python-pymongo
+         ref: f28
+--- a/modulemd/modulemd-yaml-util.c
++++ b/modulemd/modulemd-yaml-util.c
+@@ -671,7 +671,7 @@
+   if (event.type != YAML_MAPPING_START_EVENT)
+     {
+       MMD_YAML_ERROR_EVENT_EXIT_BOOL (
+-        error, event, "Document did not start with a mappping");
++        error, event, "Document did not start with a mapping");
+     }
+   MMD_EMIT_WITH_EXIT_FULL (
+     emitter, FALSE, &event, error, "Error starting mapping");

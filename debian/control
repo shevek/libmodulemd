@@ -1,0 +1,84 @@
+Source: libmodulemd
+Section: libs
+Priority: optional
+Maintainer: RPM packaging team <team+pkg-rpm@tracker.debian.org>
+Uploaders: Peter Pentchev <roam@debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-gir,
+ dh-sequence-python3,
+ help2man,
+ libgirepository1.0-dev,
+ libglib2.0-dev,
+ libmagic-dev,
+ librpm-dev,
+ libyaml-dev,
+ meson,
+ pkg-config,
+ python3-gi,
+Standards-Version: 4.5.0
+Vcs-Git: https://salsa.debian.org/pkg-rpm-team/libmodulemd.git
+Vcs-Browser: https://salsa.debian.org/pkg-rpm-team/libmodulemd
+Homepage: https://github.com/fedora-modularity/libmodulemd
+Rules-Requires-Root: no
+
+Package: libmodulemd2
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: C Library for handling module metadata files
+ The libmodulemd API provides an interface for handling metadata
+ files describing the modular repositories introduced in the Fedora
+ project and RedHat Enterprise Linux.
+ .
+ This package contains the shared library.
+
+Package: libmodulemd-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+ ${shlibs:Depends},
+ gir1.2-modulemd-2.0 (= ${binary:Version}),
+ libglib2.0-dev,
+ libmodulemd2 (= ${binary:Version}),
+ librpm-dev,
+ libyaml-dev,
+Description: C Library for handling module metadata files - development files
+ The libmodulemd API provides an interface for handling metadata
+ files describing the modular repositories introduced in the Fedora
+ project and RedHat Enterprise Linux.
+ .
+ This package contains the header files needed for development.
+
+Package: libmodulemd-tools
+Section: utils
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ libmodulemd2 (= ${binary:Version}),
+Description: C Library for handling module metadata files - utilities
+ The libmodulemd API provides an interface for handling metadata
+ files describing the modular repositories introduced in the Fedora
+ project and RedHat Enterprise Linux.
+ .
+ This package contains the command-line utilities.
+
+Package: gir1.2-modulemd-2.0
+Section: introspection
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${gir:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: C Library for handling module metadata files - introspection
+ The libmodulemd API provides an interface for handling metadata
+ files describing the modular repositories introduced in the Fedora
+ project and RedHat Enterprise Linux.
+ .
+ This package contains the gobject-introspection definitions.

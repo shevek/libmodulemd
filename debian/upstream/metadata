@@ -1,0 +1,5 @@
+Bug-Database: https://github.com/fedora-modularity/libmodulemd/issues
+Bug-Submit: https://github.com/fedora-modularity/libmodulemd/issues/new
+Security-Contact: Stephen Gallagher <sgallagh@redhat.com>
+Repository: https://github.com/fedora-modularity/libmodulemd.git
+Repository-Browse: https://github.com/fedora-modularity/libmodulemd

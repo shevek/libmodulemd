@@ -1,0 +1,5 @@
+usr/include/modulemd-2.0
+usr/lib/*/libmodulemd.so
+usr/lib/*/pkgconfig/modulemd-2.0.pc
+usr/lib/python3/dist-packages/gi/overrides/Modulemd.py
+usr/share/gir-1.0/Modulemd-2.0.gir
