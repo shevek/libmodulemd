@@ -1,0 +1,2 @@
+Tests: upstream.sh
+Depends: @, build-essential, libmagic-dev, pkg-config, meson, python3-gi
