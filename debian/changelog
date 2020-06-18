@@ -1,5 +1,5 @@
-libmodulemd (2.9.4-1) UNRELEASED; urgency=low
+libmodulemd (2.9.4-1) unstable; urgency=low
 
   * Initial release. Closes: #961806.
 
- -- Peter Pentchev <roam@debian.org>  Mon, 01 Jun 2020 08:52:09 +0300
+ -- Peter Pentchev <roam@debian.org>  Fri, 19 Jun 2020 00:08:38 +0300
