@@ -10,5 +10,8 @@ export DEB_BUILD_MAINT_OPTIONS
 override_dh_auto_configure:
 	dh_auto_configure -- -Dwith_docs=false -Dwith_manpages=enabled -Dpython_name=python3 -Dwith_py2=false -Dskip_formatters=true -Ddeveloper_build=false
 
+override_dh_auto_test:
+	dh_auto_test -- -t 10
+
 override_dh_makeshlibs:
 	dh_makeshlibs -- -c4
