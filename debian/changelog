@@ -1,9 +1,9 @@
-libmodulemd (2.9.4-2) UNRELEASED; urgency=medium
+libmodulemd (2.9.4-2) unstable; urgency=medium
 
   * Bump the timeout for the unit tests to hopefully fix the FTBFS cases
     on some of the autobuilders.
 
- -- Peter Pentchev <roam@debian.org>  Sun, 26 Jul 2020 10:32:02 +0300
+ -- Peter Pentchev <roam@debian.org>  Sun, 26 Jul 2020 10:48:30 +0300
 
 libmodulemd (2.9.4-1) unstable; urgency=low
 
